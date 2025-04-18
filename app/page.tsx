@@ -27,7 +27,7 @@ export default function Home() {
       <Navbar currentPage="home" />
 
       {/* Hero content */}
-      <div className="relative z-10 mx-auto max-w-14xl flex flex-col items-start px-6 text-white h-full justify-center">
+      <div className="relative z-10 mx-auto max-w-14xl flex flex-col items-start pl-42 pb-10 px-6 text-white h-full justify-center">
         <h1 className="text-5xl md:text-5xl font-light tracking-[0.02em]">
           The Fastest <strong>You</strong>&apos;ve Ever Gone
         </h1>
