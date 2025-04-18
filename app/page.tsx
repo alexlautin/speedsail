@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
@@ -13,7 +12,7 @@ export default function Home() {
       {/* Hero content */}
       <div className="relative z-10 mx-auto max-w-14xl h-[92vh] px-6 flex flex-col items-start justify-center pl-42 text-white">
         <h1 className="text-5xl md:text-5xl font-light tracking-[0.02em]">
-          The Fastest <strong>You</strong>'ve Ever Gone
+          The Fastest <strong>You</strong>&apos;ve Ever Gone
         </h1>
         <p className="mt-6 text-lg md:text-3xl tracking-[0.02em] font-light">
           A series of <Link href="/videos" className="underline hover:text-gray-300">videos</Link> dedicated to the art of sailing fast
