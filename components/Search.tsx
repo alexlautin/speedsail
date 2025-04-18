@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useRef, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { createPortal } from "react-dom";
 
@@ -12,34 +11,17 @@ interface SearchResult {
   excerpt: string;
 }
 
-// Sample data - replace with real data or API call
-const searchData: SearchResult[] = [
-  { 
-    title: 'Speedsailing Basics', 
-    path: '/videos', 
-    excerpt: 'Learn the fundamentals of speedsailing in this introductory video.'
-  },
-  { 
-    title: 'Advanced Techniques', 
-    path: '/videos', 
-    excerpt: 'Master advanced sailing techniques for maximum speed.'
-  },
-  { 
-    title: 'Equipment Guide', 
-    path: '/podcast', 
-    excerpt: 'Everything you need to know about speedsailing equipment.'
-  },
-  { 
-    title: 'Sailing Podcast Episode 1', 
-    path: '/podcast', 
-    excerpt: 'An introduction to the world of competitive speedsailing.'
-  },
-  { 
-    title: 'About Speedsail', 
-    path: '/about', 
-    excerpt: 'Learn about our mission and history.'
+// Fetch search results from API
+async function fetchSearchResults(query: string): Promise<SearchResult[]> {
+  if (!query || query.length < 2) return [];
+  try {
+    const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+    if (!res.ok) return [];
+    return await res.json();
+  } catch {
+    return [];
   }
-];
+}
 
 export default function Search() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,19 +31,18 @@ export default function Search() {
   const [dropdownPos, setDropdownPos] = useState({ left: 0, top: 0, width: 300 });
   const inputRef = useRef<HTMLInputElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const router = useRouter();
 
   // Handle search
   useEffect(() => {
+    let ignore = false;
     if (searchQuery.length > 1) {
-      const filtered = searchData.filter(item => 
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      setResults(filtered);
+      fetchSearchResults(searchQuery).then(filtered => {
+        if (!ignore) setResults(filtered);
+      });
     } else {
       setResults([]);
     }
+    return () => { ignore = true; };
   }, [searchQuery]);
 
   useEffect(() => {

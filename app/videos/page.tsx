@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import Search from "@/components/Search";
 
 export default function Videos() {
   // Videos data structure - replace with actual videos

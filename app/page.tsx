@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Search from "@/components/Search";
 
 export default function Home() {
   return (
@@ -11,7 +10,7 @@ export default function Home() {
       <Navbar currentPage="home" />
 
       {/* Hero content */}
-      <div className="relative z-10 mx-auto max-w-14xl pt-96 px-6 flex flex-col items-start justify-center pl-42 text-white pt-20">
+      <div className="relative z-10 mx-auto max-w-14xl pt-96 px-6 flex flex-col items-start justify-center pl-42 text-white">
         <h1 className="text-5xl md:text-5xl font-light tracking-[0.02em]">
           The Fastest <strong>You</strong>&apos;ve Ever Gone
         </h1>
