@@ -1,16 +1,14 @@
 import Navbar from "@/components/Navbar";
+import Search from "@/components/Search";
 
 export default function Podcast() {
   return (
-    <div className="min-h-screen bg-[url('/podcast-hero.jpg')] bg-cover bg-center relative">
+    <div className="min-h-screen bg-cover bg-center relative">
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#064273] mix-blend-multiply" />
       
-      {/* Navigation - transparent */}
-      <header className="relative z-10">
-        <Navbar currentPage="podcast" />
-      </header>
-      
+      <Navbar currentPage="podcast" />
+
       {/* Podcast content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-[85vh] px-6 text-white text-center">
         <h1 className="text-4xl md:text-5xl font-light tracking-[0.02em] mb-10">
