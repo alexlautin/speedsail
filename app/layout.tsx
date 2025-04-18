@@ -1,6 +1,7 @@
 // app/layout.tsx
 import "./globals.css";
 import { Lato } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const lato = Lato({
   weight: ["300", "400"],
@@ -33,6 +34,7 @@ export default function RootLayout({
       </head>
       <body className={`min-h-screen flex flex-col font-sans text-slate-800 overflow-y-auto ${lato.className}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );

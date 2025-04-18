@@ -27,7 +27,7 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
           <Link href="/" className={`text-white hover:text-gray-300 ${currentPage === 'home' ? 'font-bold' : 'font-light'}`}>Home</Link>
           <Link href="/videos" className={`text-white hover:text-gray-300 ${currentPage === 'videos' ? 'font-bold' : 'font-light'}`}>Videos</Link>
           <Link href="/podcast" className={`text-white hover:text-gray-300 ${currentPage === 'podcast' ? 'font-bold' : 'font-light'}`}>Podcast</Link>
-          <Link href="/about" className={`text-white hover:text-gray-300 ${currentPage === 'about' ? 'font-bold' : 'font-light'}`}>About</Link>
+          <Link href="/about" className={`text-white pr-2 hover:text-gray-300 ${currentPage === 'about' ? 'font-bold' : 'font-light'}`}>About</Link>
           <Search />
         </div>
       </nav>
