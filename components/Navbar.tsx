@@ -18,6 +18,7 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
             height={30} 
             alt="Speedsail logo" 
             className="mr-2"
+            priority={true}
             style={{ width: 'auto', height: 'auto' }}
           />
           <span className="text-white text-lg font-light">Speedsail™</span>

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 interface LiteYouTubeEmbedProps {
   id: string;
@@ -14,11 +15,12 @@ const LiteYouTubeEmbed: React.FC<LiteYouTubeEmbedProps> = ({ id, title }) => {
     <div className="relative aspect-video w-full cursor-pointer bg-black rounded overflow-hidden" onClick={() => setIframeLoaded(true)}>
       {!iframeLoaded && (
         <>
-          <img
+          <Image
             src={thumbnail}
             alt={`YouTube thumbnail for ${title}`}
-            className="absolute w-full h-full object-cover top-0 left-0"
-            loading="lazy"
+            fill
+            className="absolute object-cover top-0 left-0"
+            sizes="(max-width: 1280px) 100vw, 1280px"
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <svg width="68" height="48" viewBox="0 0 68 48">

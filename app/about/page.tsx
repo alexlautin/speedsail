@@ -14,7 +14,7 @@ export default function About() {
           src="/sailing.png"
           alt="Sailing background"
           fill
-          priority={false}
+          priority={true}
           quality={70}
           style={{ objectFit: 'cover', zIndex: 0 }}
           className="absolute inset-0 -z-10"
