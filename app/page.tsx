@@ -1,11 +1,26 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Image from "next/image";
+
+export const viewport = {
+  themeColor: "#464D4D",
+};
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[url('/frontpage.jpg')] bg-cover bg-center relative">
+    <div className="min-h-screen bg-black/60 bg-cover bg-center relative">
+      {/* Optimized background image */}
+      <Image 
+        src="/frontpage.jpg"
+        alt="Sailing background"
+        fill
+        priority={false}
+        quality={70}
+        style={{ objectFit: 'cover', zIndex: 0 }}
+        className="absolute inset-0 -z-10"
+      />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-black/60 mix-blend-multiply z-0" />
       
       <Navbar currentPage="home" />
 

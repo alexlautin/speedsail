@@ -105,6 +105,7 @@ export default function Search() {
                     className="w-full text-left block px-4 py-3 hover:bg-gray-100 cursor-pointer border-t border-gray-100 z-50"
                     scroll={true}
                     passHref
+                    prefetch={true}
                   >
                     <h3 className="text-sm font-medium text-gray-800">{result.title}</h3>
                     <p className="text-xs text-gray-600 mt-1">{result.excerpt}</p>

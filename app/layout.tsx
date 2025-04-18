@@ -13,6 +13,10 @@ export const metadata = {
   description: "The fastest you've ever gone",
 };
 
+export const viewport = {
+  themeColor: "#464D4D",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -20,7 +24,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`min-h-screen flex flex-col font-sans text-slate-800 ${lato.className}`}>
+      <head>
+        <link rel="preload" as="document" href="https://www.youtube.com/embed/jhox2wPf1lk" />
+        <link rel="preload" as="document" href="https://embed.podcasts.apple.com/us/podcast/speedsail/id1623881938" />
+      </head>
+      <body className={`min-h-screen flex flex-col font-sans text-slate-800 overflow-y-auto ${lato.className}`}>
         {children}
       </body>
     </html>

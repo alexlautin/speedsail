@@ -1,5 +1,9 @@
 import Navbar from "@/components/Navbar";
 
+export const viewport = {
+  themeColor: "#020611",
+};
+
 export default function Podcast() {
   return (
     <div className="min-h-screen bg-cover bg-center relative">
