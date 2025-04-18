@@ -10,7 +10,7 @@ export const viewport = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black/60 bg-cover bg-center relative">
+    <div className="h-screen overflow-hidden bg-black/60 bg-cover bg-center relative">
       {/* Optimized background image */}
       <Image 
         src="/frontpage.jpg"
@@ -27,7 +27,7 @@ export default function Home() {
       <Navbar currentPage="home" />
 
       {/* Hero content */}
-      <div className="relative z-10 mx-auto max-w-14xl pt-96 min-h-screen flex flex-col items-start px-6 pl-42 text-white">
+      <div className="relative z-10 mx-auto max-w-14xl flex flex-col items-start px-6 text-white h-full justify-center">
         <h1 className="text-5xl md:text-5xl font-light tracking-[0.02em]">
           The Fastest <strong>You</strong>&apos;ve Ever Gone
         </h1>

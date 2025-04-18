@@ -10,7 +10,7 @@ export const dynamic = 'force-static';
 export default function About() {
   return (
     <>
-      <div className="min-h-screen bg-black/60 bg-cover bg-center relative">
+      <div className="h-screen overflow-hidden bg-black/60 bg-cover bg-center relative">
         {/* Optimized background image */}
         <Image 
           src="/sailing.png"
@@ -27,7 +27,7 @@ export default function About() {
         <Navbar currentPage="about" />
         
         {/* Hero content */}
-        <div className="relative z-10 mx-auto max-w-14xl h-[92vh] px-6 flex flex-col items-start justify-center pl-42 text-white">
+        <div className="relative z-10 mx-auto pl-40 pb-20 max-w-14xl h-full px-6 flex flex-col items-start justify-center text-white">
           <h1 className="text-5xl md:text-3xl font-light tracking-[0.02em]">
             <strong>Alex</strong>
           </h1>
