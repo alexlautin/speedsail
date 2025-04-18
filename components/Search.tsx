@@ -11,13 +11,19 @@ interface SearchResult {
   excerpt: string;
 }
 
-// Fetch search results from API
+// Simple in-memory cache for search results
+const searchCache: { [query: string]: SearchResult[] } = {};
+
+// Fetch search results from API with cache
 async function fetchSearchResults(query: string): Promise<SearchResult[]> {
   if (!query || query.length < 2) return [];
+  if (searchCache[query]) return searchCache[query];
   try {
     const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
     if (!res.ok) return [];
-    return await res.json();
+    const data = await res.json();
+    searchCache[query] = data;
+    return data;
   } catch {
     return [];
   }

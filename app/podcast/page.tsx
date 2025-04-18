@@ -4,6 +4,8 @@ export const viewport = {
   themeColor: "#020611",
 };
 
+export const dynamic = 'force-static';
+
 export default function Podcast() {
   return (
     <div className="min-h-screen bg-cover bg-center relative">

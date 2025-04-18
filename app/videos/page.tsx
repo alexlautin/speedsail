@@ -6,6 +6,8 @@ export const viewport = {
   themeColor: "#020611",
 };
 
+export const dynamic = 'force-static';
+
 export default function Videos() {
   // Videos data structure - replace with actual videos
   const videos = [

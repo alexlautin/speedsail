@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 
+export const dynamic = 'force-static';
+
 export default function Contact() {
   return (
     <div className="min-h-screen bg-black/60 bg-cover bg-center relative">
