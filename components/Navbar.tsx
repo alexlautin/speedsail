@@ -10,7 +10,7 @@ type NavbarProps = {
 export default function Navbar({ currentPage = 'home' }: NavbarProps) {
   return (
     <header className="relative z-10">
-      <nav className="flex justify-between items-center p-4">
+      <nav className="h-20 flex justify-between items-center px-6">
         <div className="flex items-center">
           <Image 
             src="/logo.png" 
