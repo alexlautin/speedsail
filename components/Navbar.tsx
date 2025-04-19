@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import Search from "@/components/Search";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 
@@ -49,7 +48,6 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
           <Link href="/videos" className={`text-white hover:text-gray-300 ${currentPage === 'videos' ? 'font-bold' : 'font-light'}`}>Videos</Link>
           <Link href="/podcast" className={`text-white hover:text-gray-300 ${currentPage === 'podcast' ? 'font-bold' : 'font-light'}`}>Podcast</Link>
           <Link href="/about" className={`text-white pr-2 hover:text-gray-300 ${currentPage === 'about' ? 'font-bold' : 'font-light'}`}>About</Link>
-          <Search />
         </div>
         {/* Mobile nav */}
         {mounted && menuOpen && typeof window !== 'undefined' && document.body &&
@@ -81,11 +79,6 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
                   </div>
                 ))}
               </div>
-              {/* <div className="w-full flex justify-center">
-                <div className="max-w-xs w-full px-4">
-                    <Search />
-                </div>
-              </div> */}
             </div>,
             document.body
           )
