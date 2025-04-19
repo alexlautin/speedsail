@@ -1,11 +1,11 @@
+export const dynamic = 'force-static';
+
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 
 export const viewport = {
   themeColor: "#413E46",
 };
-
-export const dynamic = 'force-static';
 
 export default function About() {
   return (

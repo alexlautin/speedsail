@@ -25,13 +25,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      {/* <head>
         <link rel="preload" as="document" href="https://www.youtube.com/embed/jhox2wPf1lk" />
         <link rel="preload" as="document" href="https://embed.podcasts.apple.com/us/podcast/speedsail/id1623881938" />
         <link rel="preload" as="image" href="/frontpage.jpg" />
         <link rel="preload" as="image" href="/sailing.png" />
         <link rel="preload" as="image" href="/logo.png" />
-      </head>
+      </head> */}
       <body className={`min-h-screen flex flex-col font-sans text-slate-800 overflow-y-auto ${lato.className}`}>
         {children}
         <Analytics />

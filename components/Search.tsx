@@ -37,6 +37,7 @@ export default function Search() {
   const [mounted, setMounted] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Only fetch when searchTerm changes (button click)
   useEffect(() => {
@@ -60,11 +61,12 @@ export default function Search() {
     if (!isOpen) return;
     function handleClick(event: MouseEvent) {
       if (
-        inputRef.current && !inputRef.current.contains(event.target as Node) &&
-        buttonRef.current && !buttonRef.current.contains(event.target as Node)
+        (dropdownRef.current && dropdownRef.current.contains(event.target as Node)) ||
+        (buttonRef.current && buttonRef.current.contains(event.target as Node))
       ) {
-        setIsOpen(false);
+        return;
       }
+      setIsOpen(false);
     }
     document.addEventListener('mousedown', handleClick);
     return () => document.removeEventListener('mousedown', handleClick);
@@ -84,6 +86,7 @@ export default function Search() {
       </button>
       {mounted && isOpen && createPortal(
         <div
+          ref={dropdownRef}
           className="bg-white rounded shadow-lg z-[9999] max-h-96 overflow-y-auto"
           style={{ position: 'fixed', top: 64, right: 16, width: 340, minWidth: 300 }}
         >

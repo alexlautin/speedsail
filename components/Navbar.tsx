@@ -55,7 +55,7 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
         {/* Mobile nav */}
         {mounted && menuOpen && typeof window !== 'undefined' && document.body &&
           createPortal(
-            <div className="fixed inset-0 bg-black/95 flex flex-col items-center justify-center sm:hidden z-[99999]">
+            <div className="fixed inset-0 bg-black/95 flex flex-col items-center justify-center sm:hidden z-50">
               <button
                 className="absolute top-4 right-4 text-white text-3xl focus:outline-none"
                 aria-label="Close menu"
@@ -82,11 +82,11 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
                   </div>
                 ))}
               </div>
-              <div className="w-full flex justify-center">
+              {/* <div className="w-full flex justify-center">
                 <div className="max-w-xs w-full px-4">
-                  <Search />
+                    <Search />
                 </div>
-              </div>
+              </div> */}
             </div>,
             document.body
           )

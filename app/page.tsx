@@ -13,7 +13,7 @@ export default function Home() {
     <div className="h-screen overflow-hidden bg-black/60 bg-cover bg-center relative">
       {/* Optimized background image */}
       <Image 
-        src="/frontpage.jpg"
+        src="/frontpage.png"
         alt="Sailing background"
         fill
         priority={true}
