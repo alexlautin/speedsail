@@ -24,12 +24,11 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
           <Link href="/" className="flex items-center">
             <Image 
               src="/logo.png" 
-              width={30} 
-              height={30} 
+              width={32} 
+              height={40} 
               alt="Speedsail logo" 
               className="mr-2"
               priority={true}
-              style={{ width: 'auto', height: 'auto' }}
             />
             <span className="text-white text-lg font-light">Speedsail™</span>
           </Link>
