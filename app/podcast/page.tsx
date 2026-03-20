@@ -31,7 +31,7 @@ export default function Podcast() {
       </div>
       
       <footer className="relative z-10 text-center text-white text-sm">
-        © Copyright SpeedSail™ 2021-2025. All rights reserved.
+        © Copyright SpeedSail™ 2021-2026. All rights reserved.
       </footer>
     </div>
   );
