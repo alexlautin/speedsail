@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
 
 type NavbarProps = {
@@ -10,11 +10,6 @@ type NavbarProps = {
 
 export default function Navbar({ currentPage = 'home' }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <header className="relative z-10">
@@ -50,7 +45,7 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
           <Link href="/about" className={`text-white pr-2 hover:text-gray-300 ${currentPage === 'about' ? 'font-bold' : 'font-light'}`}>About</Link>
         </div>
         {/* Mobile nav */}
-        {mounted && menuOpen && typeof window !== 'undefined' && document.body &&
+        {menuOpen &&
           createPortal(
             <div className="fixed inset-0 bg-black/95 flex flex-col items-center justify-center sm:hidden z-50">
               <button
