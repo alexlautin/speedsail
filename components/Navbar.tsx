@@ -22,8 +22,8 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
             <Image 
-              src="/logo.png" 
-              width={32} 
+              src="/logo.svg" 
+              width={40} 
               height={40} 
               alt="Speedsail logo" 
               className="mr-2"
